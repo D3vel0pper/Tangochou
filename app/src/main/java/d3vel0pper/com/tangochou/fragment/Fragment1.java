@@ -2,6 +2,8 @@ package d3vel0pper.com.tangochou.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +19,15 @@ import d3vel0pper.com.tangochou.R;
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
     private MainActivity parent;
+    private TestFragment testfragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view =  inflater.inflate(R.layout.fragment1,container,false);
         Button moveBtn = (Button)view.findViewById(R.id.moveBtn);
         moveBtn.setOnClickListener(this);
+        Button testBtn = (Button)view.findViewById(R.id.testBtn);
+        testBtn.setOnClickListener(this);
         return view;
     }
 
@@ -36,6 +41,15 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
     public void onClick(View v){
         if(v.getId() == R.id.moveBtn){
             parent.move();
+        } else if(v.getId() == R.id.testBtn){
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            if(this.testfragment == null){
+                this.testfragment = new TestFragment();
+            }
+            fragmentTransaction.add(R.id.fragment_container,this.testfragment);
+            fragmentTransaction.commit();
+
         }
     }
 

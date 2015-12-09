@@ -1,5 +1,7 @@
 package d3vel0pper.com.tangochou.activity;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.view.View;
 
 import d3vel0pper.com.tangochou.R;
 import d3vel0pper.com.tangochou.activity.SecondActivity;
+import d3vel0pper.com.tangochou.fragment.TestFragment;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -19,12 +22,11 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void move(View v) {
+    public void move() {
         Intent intent;
-        switch (v.getId()){
-            case R.id.moveBtn:
-                intent = new Intent(this, SecondActivity.class);
-                startActivity(intent);
+        intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+        /*
                 break;
             case R.id.moveConfigBtn:
                 intent = new Intent(this, ConfigActivity.class);
@@ -34,7 +36,10 @@ public class MainActivity extends ActionBarActivity {
                 intent = new Intent(this, WordCardListActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.testBtn:
+                break;
         }
+        */
 
     }
 
