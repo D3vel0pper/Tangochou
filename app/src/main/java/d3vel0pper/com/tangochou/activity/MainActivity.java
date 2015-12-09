@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import d3vel0pper.com.tangochou.R;
 import d3vel0pper.com.tangochou.activity.SecondActivity;
@@ -18,9 +19,23 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void move() {
-        Intent intent = new Intent(this, SecondActivity.class);
-        startActivity(intent);
+    public void move(View v) {
+        Intent intent;
+        switch (v.getId()){
+            case R.id.moveBtn:
+                intent = new Intent(this, SecondActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.moveConfigBtn:
+                intent = new Intent(this, ConfigActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.moveCardListBtn:
+                intent = new Intent(this, WordCardListActivity.class);
+                startActivity(intent);
+                break;
+        }
+
     }
 
 

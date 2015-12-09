@@ -7,4 +7,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/moveBtn"
         android:text="next"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moveConfigBtn"
+        android:text="config"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moveCardListBtn"
+        android:text="CardList"/>
 </LinearLayout>
