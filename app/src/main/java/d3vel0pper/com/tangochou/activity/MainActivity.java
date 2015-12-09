@@ -1,9 +1,13 @@
-package d3vel0pper.com.tangochou;
+package d3vel0pper.com.tangochou.activity;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import d3vel0pper.com.tangochou.R;
+import d3vel0pper.com.tangochou.activity.SecondActivity;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +16,11 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void move() {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
     }
 
 
