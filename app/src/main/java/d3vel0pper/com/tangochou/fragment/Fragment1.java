@@ -42,6 +42,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         if(v.getId() == R.id.moveBtn){
             parent.move();
         } else if(v.getId() == R.id.testBtn){
+            //fragment manage
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             if(this.testfragment == null){
