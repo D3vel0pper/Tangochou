@@ -48,9 +48,10 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
             if(this.testfragment == null){
                 this.testfragment = new TestFragment();
             }
-            fragmentTransaction.add(R.id.fragment_container,this.testfragment);
+            fragmentTransaction.replace(R.id.container,this.testfragment);
+            fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
-
+            v.invalidate();
         }
     }
 

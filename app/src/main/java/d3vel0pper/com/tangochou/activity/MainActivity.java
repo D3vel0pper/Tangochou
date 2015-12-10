@@ -11,6 +11,7 @@ import android.view.View;
 
 import d3vel0pper.com.tangochou.R;
 import d3vel0pper.com.tangochou.activity.SecondActivity;
+import d3vel0pper.com.tangochou.fragment.Fragment1;
 import d3vel0pper.com.tangochou.fragment.TestFragment;
 
 
@@ -20,27 +21,17 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.container,new Fragment1());
+        //fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
     public void move() {
         Intent intent;
         intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
-        /*
-                break;
-            case R.id.moveConfigBtn:
-                intent = new Intent(this, ConfigActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.moveCardListBtn:
-                intent = new Intent(this, WordCardListActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.testBtn:
-                break;
-        }
-        */
-
     }
 
 
