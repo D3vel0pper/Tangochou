@@ -28,6 +28,17 @@ public class MainActivity extends ActionBarActivity {
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void onBackPressed(){
+        int backStackCnt = getFragmentManager().getBackStackEntryCount();
+        if(backStackCnt != 0){
+            //
+            getFragmentManager().popBackStack();
+        } else{
+            super.onBackPressed();
+        }
+    }
+
     public void move() {
         Intent intent;
         intent = new Intent(this, SecondActivity.class);
