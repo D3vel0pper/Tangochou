@@ -19,7 +19,6 @@ import d3vel0pper.com.tangochou.R;
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
     private MainActivity parent;
-    private TestFragment testfragment;
     private ConfigFragment configfragment;
     private WordCardListFragment wordcardlistfragment;
 
@@ -39,26 +38,13 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onAttach(Activity activity){
-        parent = (MainActivity) activity;
+        this.parent = (MainActivity) activity;
         super.onAttach(activity);
     }
 
     @Override
     public void onClick(View v){
-        if(v.getId() == R.id.moveBtn){
-            parent.move();
-        } else if(v.getId() == R.id.testBtn){
-            //fragment manage
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            if(this.testfragment == null){
-                this.testfragment = new TestFragment();
-            }
-            fragmentTransaction.replace(R.id.container,this.testfragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-            //v.invalidate();
-        } else if(v.getId() == R.id.moveConfigBtn){
+        if(v.getId() == R.id.moveConfigBtn){
             //fragment manage
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -81,7 +67,6 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         }
 
     }
-
 
 
 }
