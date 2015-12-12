@@ -9,11 +9,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/moveBtn"
-        android:text="next"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/moveConfigBtn"
         android:text="config"/>
     <Button
@@ -21,16 +16,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/moveCardListBtn"
         android:text="CardList"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TestTest"
-        android:id="@+id/testBtn"/>
     </LinearLayout>
-    <!--
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fragment_container"></FrameLayout>
-        -->
 </LinearLayout>
