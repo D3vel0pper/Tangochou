@@ -50,6 +50,7 @@ public class WordCardListFragment extends Fragment {
                 ListView listview = (ListView) parent;
                 String item = (String) listview.getItemAtPosition(position);
                 Toast.makeText(context,item + "longtaped",Toast.LENGTH_SHORT).show();
+                return false;
             }
         });
 
