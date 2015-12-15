@@ -12,7 +12,7 @@ import android.view.View;
 import d3vel0pper.com.tangochou.R;
 import d3vel0pper.com.tangochou.activity.SecondActivity;
 import d3vel0pper.com.tangochou.fragment.Fragment1;
-import d3vel0pper.com.tangochou.fragment.TestFragment;
+//import d3vel0pper.com.tangochou.fragment.TestFragment;
 
 
 public class MainActivity extends ActionBarActivity {

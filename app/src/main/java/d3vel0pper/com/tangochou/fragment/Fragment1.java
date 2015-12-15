@@ -25,10 +25,12 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view =  inflater.inflate(R.layout.fragment1,container,false);
+       /*
         Button moveBtn = (Button)view.findViewById(R.id.moveBtn);
         moveBtn.setOnClickListener(this);
         Button testBtn = (Button)view.findViewById(R.id.testBtn);
         testBtn.setOnClickListener(this);
+        */
         Button configBtn = (Button)view.findViewById(R.id.moveConfigBtn);
         configBtn.setOnClickListener(this);
         Button cardListBtn = (Button)view.findViewById(R.id.moveCardListBtn);
