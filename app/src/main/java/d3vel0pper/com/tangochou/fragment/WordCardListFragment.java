@@ -1,7 +1,9 @@
 package d3vel0pper.com.tangochou.fragment;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import d3vel0pper.com.tangochou.R;
+import d3vel0pper.com.tangochou.activity.MainActivity;
 import d3vel0pper.com.tangochou.addapter.CardListAddapter;
 
 /**
@@ -49,6 +52,22 @@ public class WordCardListFragment extends Fragment {
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
                 ListView listview = (ListView) parent;
                 String item = (String) listview.getItemAtPosition(position);
+
+                //add for give ListView for dialog
+                String[] dialog_items = {"タイトル変更","編集","削除"};
+                LayoutInflater li = LayoutInflater.from(getActivity());
+                View Dialogview = li.inflate(R.layout.dialog_layout,(ListView)view.findViewById(R.id.dialog_container));
+                ListView lv = (ListView)Dialogview.findViewById(R.id.dialog_container);
+                CardListAddapter dialogAdapter = new CardListAddapter(context,dialog_items);
+                lv.setAdapter(dialogAdapter);
+
+                new AlertDialog.Builder(getActivity())
+                        .setView(Dialogview).setPositiveButton("Close",new DialogInterface.OnClickListener(){
+                    @Override
+                public void onClick(DialogInterface dialog,int whitch){
+                    }
+                }).show();
+
                 Toast.makeText(context,item + "longtaped",Toast.LENGTH_SHORT).show();
                 return false;
             }
