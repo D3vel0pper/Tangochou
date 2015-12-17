@@ -2,6 +2,8 @@ package d3vel0pper.com.tangochou.fragment;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import d3vel0pper.com.tangochou.addapter.CardListAddapter;
  * Created by taka-dhu on 2015/12/09.
  */
 public class WordCardListFragment extends Fragment {
+    private CardFragment cardFragment;
     private ListView listView;
     private Context context;
     private static String[] teststr = {"Hoge","foo","hogehoge","Foo"};
@@ -43,7 +46,18 @@ public class WordCardListFragment extends Fragment {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 ListView listview = (ListView)parent;
                 String item = (String)listview.getItemAtPosition(position);
-                Toast.makeText(context,item + "clicked",Toast.LENGTH_SHORT).show();
+
+                //fragment manage
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                if(cardFragment == null){
+                    cardFragment = new CardFragment();
+                }
+                fragmentTransaction.replace(R.id.container,cardFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+                //Toast.makeText(context,item + "clicked",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -68,7 +82,6 @@ public class WordCardListFragment extends Fragment {
                     }
                 }).show();
 
-                Toast.makeText(context,item + "longtaped",Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
