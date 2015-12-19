@@ -32,17 +32,21 @@ public class CardFragment extends Fragment {
         View view = inflater.inflate(R.layout.cardfragment,container,false);
         this.context = getActivity();
 
-        //read this article -> http://aims-to-freelance.hatenablog.jp/entry/2015/02/10/224122
         //this code does not work. U must read and understand the Work of CardView
-        /*
+
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         HorizontalScrollView cardScrollView = (HorizontalScrollView)layoutInflater.inflate(R.layout.card_layout,null);
+        CardView cardView = (CardView)view.findViewById(R.id.CardView);
         TextView WordText = (TextView)view.findViewById(R.id.CarditemText);
         WordText.setText("TestText");
-        //cardScrollView.addView();
-        */
+        LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.cardLinear);
+        cardView.setTag(0);
+
+        cardScrollView.addView(linearLayout,0);
+
 
         //test code
+        /*
         LinearLayout cardLinear = (LinearLayout)view.findViewById(R.id.cardLinear);
         cardLinear.removeAllViews();
 
@@ -61,6 +65,7 @@ public class CardFragment extends Fragment {
             });
             cardLinear.addView(linearLayout,i);
         }
+        */
 
         return view;
     }
