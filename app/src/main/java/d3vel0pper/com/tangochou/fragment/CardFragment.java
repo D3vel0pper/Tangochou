@@ -8,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import d3vel0pper.com.tangochou.R;
 import d3vel0pper.com.tangochou.addapter.ConfigItemAddapter;
@@ -39,6 +41,27 @@ public class CardFragment extends Fragment {
         WordText.setText("TestText");
         //cardScrollView.addView();
         */
+
+        //test code
+        LinearLayout cardLinear = (LinearLayout)view.findViewById(R.id.cardLinear);
+        cardLinear.removeAllViews();
+
+        for(int i = 0;i<5;i++){
+            LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LinearLayout linearLayout = (LinearLayout)layoutInflater.inflate(R.layout.card_layout,null);
+            CardView cardView = (CardView)linearLayout.findViewById(R.id.CardView);
+            TextView textView = (TextView)linearLayout.findViewById(R.id.WordText);
+            textView.setText("CardView" + i);
+            cardView.setTag(i);
+            cardView.setOnClickListener(new View.OnClickListener(){
+                @Override
+            public void onClick(View v){
+                    Toast.makeText(context,String.valueOf(v.getTag()) + "th Clicked",Toast.LENGTH_SHORT).show();
+                }
+            });
+            cardLinear.addView(linearLayout,i);
+        }
+
         return view;
     }
 }
