@@ -14,6 +14,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.zip.Inflater;
+
 import d3vel0pper.com.tangochou.R;
 import d3vel0pper.com.tangochou.addapter.ConfigItemAddapter;
 
@@ -35,14 +37,16 @@ public class CardFragment extends Fragment {
         //this code does not work. U must read and understand the Work of CardView
 
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        HorizontalScrollView cardScrollView = (HorizontalScrollView)layoutInflater.inflate(R.layout.card_layout,null);
+        //HorizontalScrollView cardScrollView = (HorizontalScrollView)layoutInflater.inflate(R.layout.card_layout,null);
+        LinearLayout ll = (LinearLayout)layoutInflater.inflate(R.layout.card_layout,null);
         CardView cardView = (CardView)view.findViewById(R.id.CardView);
         TextView WordText = (TextView)view.findViewById(R.id.CarditemText);
         WordText.setText("TestText");
         LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.cardLinear);
         cardView.setTag(0);
 
-        cardScrollView.addView(linearLayout,0);
+        //cardScrollView.addView(linearLayout,0);
+        ll.addView(linearLayout,0);
 
 
         //test code
