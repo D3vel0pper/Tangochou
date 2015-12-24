@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,17 +37,19 @@ public class CardFragment extends Fragment {
 
         //this code does not work. U must read and understand the Work of CardView
 
+        LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.cardLinear);
+        linearLayout.removeAllViews();
+
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //HorizontalScrollView cardScrollView = (HorizontalScrollView)layoutInflater.inflate(R.layout.card_layout,null);
         LinearLayout ll = (LinearLayout)layoutInflater.inflate(R.layout.card_layout,null);
         CardView cardView = (CardView)view.findViewById(R.id.CardView);
-        TextView WordText = (TextView)view.findViewById(R.id.CarditemText);
+        TextView WordText = (TextView)ll.findViewById(R.id.WordText);
         WordText.setText("TestText");
-        LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.cardLinear);
         cardView.setTag(0);
-
         //cardScrollView.addView(linearLayout,0);
-        ll.addView(linearLayout,0);
+
+        linearLayout.addView(linearLayout);
 
 
         //test code
