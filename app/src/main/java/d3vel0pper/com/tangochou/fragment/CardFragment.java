@@ -36,7 +36,7 @@ public class CardFragment extends Fragment {
         this.context = getActivity();
 
         //this code does not work. U must read and understand the Work of CardView
-
+        /*
         LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.cardLinear);
         linearLayout.removeAllViews();
 
@@ -46,14 +46,14 @@ public class CardFragment extends Fragment {
         CardView cardView = (CardView)view.findViewById(R.id.CardView);
         TextView WordText = (TextView)ll.findViewById(R.id.WordText);
         WordText.setText("TestText");
-        cardView.setTag(0);
+        //cardView.setTag(0);
         //cardScrollView.addView(linearLayout,0);
 
         linearLayout.addView(linearLayout);
-
+        */
 
         //test code
-        /*
+
         LinearLayout cardLinear = (LinearLayout)view.findViewById(R.id.cardLinear);
         cardLinear.removeAllViews();
 
@@ -72,7 +72,7 @@ public class CardFragment extends Fragment {
             });
             cardLinear.addView(linearLayout,i);
         }
-        */
+
 
         return view;
     }
