@@ -3,11 +3,14 @@ package d3vel0pper.com.tangochou.activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 
 import d3vel0pper.com.tangochou.R;
 import d3vel0pper.com.tangochou.activity.SecondActivity;
@@ -16,11 +19,19 @@ import d3vel0pper.com.tangochou.fragment.Fragment1;
 
 
 public class MainActivity extends ActionBarActivity {
+    //public int DisplayWidth = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
+        WindowManager wm = getWindowManager();
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        DisplayWidth = size.x;
+        */
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container,new Fragment1());

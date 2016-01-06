@@ -2,15 +2,20 @@ package d3vel0pper.com.tangochou.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +61,12 @@ public class CardFragment extends Fragment {
 
         LinearLayout cardLinear = (LinearLayout)view.findViewById(R.id.cardLinear);
         cardLinear.removeAllViews();
+        int Displaywidth = 0;
+        WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        Displaywidth = size.x - 20;
 
         for(int i = 0;i<5;i++){
             LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -67,6 +78,8 @@ public class CardFragment extends Fragment {
             */
             TextView textView = new TextView(context);
             textView.setText("CardView" + i);
+            textView.setGravity(Gravity.CENTER_HORIZONTAL);
+            textView.setWidth(Displaywidth);
             textView.setTextSize(20);
             cardView.setTag(i);
             cardView.setOnClickListener(new View.OnClickListener(){
@@ -75,7 +88,7 @@ public class CardFragment extends Fragment {
                     Toast.makeText(context,String.valueOf(v.getTag()) + "th Clicked",Toast.LENGTH_SHORT).show();
                 }
             });
-            LinearLayout TextLinear = (LinearLayout)linearLayout.findViewById(R.id.textLinear);
+            RelativeLayout TextLinear = (RelativeLayout)linearLayout.findViewById(R.id.textLinear);
             TextLinear.addView(textView);
             cardLinear.addView(linearLayout,i);
         }
