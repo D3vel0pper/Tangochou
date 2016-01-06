@@ -61,8 +61,13 @@ public class CardFragment extends Fragment {
             LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             LinearLayout linearLayout = (LinearLayout)layoutInflater.inflate(R.layout.card_layout,null);
             CardView cardView = (CardView)linearLayout.findViewById(R.id.CardView);
+            /*
             TextView textView = (TextView)linearLayout.findViewById(R.id.WordText);
             textView.setText("CardView" + i);
+            */
+            TextView textView = new TextView(context);
+            textView.setText("CardView" + i);
+            textView.setTextSize(20);
             cardView.setTag(i);
             cardView.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -70,6 +75,8 @@ public class CardFragment extends Fragment {
                     Toast.makeText(context,String.valueOf(v.getTag()) + "th Clicked",Toast.LENGTH_SHORT).show();
                 }
             });
+            LinearLayout TextLinear = (LinearLayout)linearLayout.findViewById(R.id.textLinear);
+            TextLinear.addView(textView);
             cardLinear.addView(linearLayout,i);
         }
 
