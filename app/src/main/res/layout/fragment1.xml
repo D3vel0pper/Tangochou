@@ -16,5 +16,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/moveCardListBtn"
         android:text="CardList"/>
+     <ViewPager
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/viewpager">
+
+         </ViewPager>
     </LinearLayout>
 </LinearLayout>
