@@ -61,12 +61,14 @@ public class CardFragment extends Fragment {
 
         LinearLayout cardLinear = (LinearLayout)view.findViewById(R.id.cardLinear);
         cardLinear.removeAllViews();
+        //Get Display size
         int Displaywidth = 0;
         WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        Displaywidth = size.x - 20;
+        Displaywidth = size.x - (size.x * 18 / 100);
+        //Displaywidth = cardLinear.getWidth();
 
         for(int i = 0;i<5;i++){
             LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
