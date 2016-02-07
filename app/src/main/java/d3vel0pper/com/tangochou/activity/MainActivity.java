@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import d3vel0pper.com.tangochou.R;
-import d3vel0pper.com.tangochou.activity.SecondActivity;
 import d3vel0pper.com.tangochou.fragment.Fragment1;
 //import d3vel0pper.com.tangochou.fragment.TestFragment;
 
@@ -38,13 +37,6 @@ public class MainActivity extends ActionBarActivity {
             super.onBackPressed();
         }
     }
-
-    public void move() {
-        Intent intent;
-        intent = new Intent(this, SecondActivity.class);
-        startActivity(intent);
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
