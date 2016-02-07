@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import d3vel0pper.com.tangochou.R;
+import d3vel0pper.com.tangochou.addapter.CardPagerAdapter;
 import d3vel0pper.com.tangochou.commons.ListData;
 
 /**
@@ -44,8 +45,8 @@ public class WordCardListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.wordcardlistfragment,container,false);
         viewPager = (ViewPager)parent.findViewById(R.id.viewPager);
-        PagerAdapter pagerAdapter = new CardPagerAdapter(this,list);
-        viewPager.setOnPageChangeListener(new PagerChangeListener());
+        PagerAdapter pagerAdapter = new CardPagerAdapter(parent,list);
+        viewPager.setOnPageChangeListener(new PageChangeListener());
         viewPager.setAdapter(pagerAdapter);
 
         return v;
@@ -57,4 +58,5 @@ public class WordCardListFragment extends Fragment {
 
         }
     }
+
 }

@@ -1,7 +1,10 @@
 package d3vel0pper.com.tangochou.addapter;
 
 import android.content.Context;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,7 +17,7 @@ import d3vel0pper.com.tangochou.commons.ListData;
 /**
  * Created by taka-dhu on 2016/02/07.
  */
-public class CardPagerAdapter {
+public class CardPagerAdapter extends PagerAdapter{
     LayoutInflater _inflater = null;
     List<ListData> list;
     private TextView text1;
@@ -36,6 +39,21 @@ public class CardPagerAdapter {
 
         container.addView(layout);
         return layout;
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container,int position,Object object){
+        ((ViewPager)container).removeView((View) object);
+    }
+
+    @Override
+    public int getCount(){
+        return list.size();
+    }
+
+    @Override
+    public boolean isViewFromObject(View view, Object obj){
+        return view.equals(obj);
     }
 
 }
