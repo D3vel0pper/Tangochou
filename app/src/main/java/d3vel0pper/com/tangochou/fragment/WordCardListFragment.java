@@ -23,7 +23,7 @@ import d3vel0pper.com.tangochou.commons.ListData;
 public class WordCardListFragment extends Fragment {
 
     private ViewPager viewPager = null;
-    private Activity parent = getActivity();
+    private Activity parent;
     private List<ListData> list;
 
     private List<ListData> DataCreate(){
@@ -43,12 +43,13 @@ public class WordCardListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState){
-        View v = inflater.inflate(R.layout.wordcardlistfragment,container,false);
-        viewPager = (ViewPager)parent.findViewById(R.id.viewPager);
+        this.parent = getActivity();
+        View v = inflater.inflate(R.layout.wordcardlistfragment,container);
+        /*this.viewPager = (ViewPager)parent.findViewById(R.id.viewPager);
         PagerAdapter pagerAdapter = new CardPagerAdapter(parent,list);
-        viewPager.setOnPageChangeListener(new PageChangeListener());
-        viewPager.setAdapter(pagerAdapter);
-
+        this.viewPager.setOnPageChangeListener(new PageChangeListener());
+        this.viewPager.setAdapter(pagerAdapter);
+*/
         return v;
     }
 

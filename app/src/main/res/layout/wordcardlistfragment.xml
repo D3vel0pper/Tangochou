@@ -9,11 +9,18 @@
         android:text="WordCardList"
         android:textSize="40sp"/>
         -->
-    <ViewPager
+    <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/viewPager"
         android:layout_gravity="center">
-
+    </android.support.v4.view.ViewPager>
+<!--
+    <andorid.support-v4-.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager"
+        android:layout_gravity="center">
         </ViewPager>
+        -->
 </LinearLayout>
