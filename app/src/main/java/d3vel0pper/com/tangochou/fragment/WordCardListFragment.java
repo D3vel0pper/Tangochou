@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ import d3vel0pper.com.tangochou.commons.ListData;
 public class WordCardListFragment extends Fragment {
 
     private ViewPager viewPager = null;
-    private Activity parent;
+    private Activity parent = getActivity();
     private List<ListData> list;
 
     private List<ListData> DataCreate(){
@@ -43,13 +44,12 @@ public class WordCardListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState){
-        this.parent = getActivity();
-        View v = inflater.inflate(R.layout.wordcardlistfragment,container);
-        /*this.viewPager = (ViewPager)parent.findViewById(R.id.viewPager);
+        View v = inflater.inflate(R.layout.wordcardlistfragment,null);
+        this.viewPager = (ViewPager)v.findViewById(R.id.viewPager);
         PagerAdapter pagerAdapter = new CardPagerAdapter(parent,list);
         this.viewPager.setOnPageChangeListener(new PageChangeListener());
         this.viewPager.setAdapter(pagerAdapter);
-*/
+
         return v;
     }
 
