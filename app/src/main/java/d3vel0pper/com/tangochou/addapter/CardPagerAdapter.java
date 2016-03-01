@@ -18,8 +18,8 @@ import d3vel0pper.com.tangochou.commons.ListData;
  * Created by taka-dhu on 2016/02/07.
  */
 public class CardPagerAdapter extends PagerAdapter{
-    LayoutInflater _inflater = null;
-    List<ListData> list;
+    private LayoutInflater _inflater;
+    private List<ListData> list;
     private TextView text1;
     private TextView text2;
 
