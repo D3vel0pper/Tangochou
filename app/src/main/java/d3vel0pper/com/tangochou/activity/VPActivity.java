@@ -1,18 +1,40 @@
 package d3vel0pper.com.tangochou.activity;
 
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import d3vel0pper.com.tangochou.R;
+import d3vel0pper.com.tangochou.commons.ListData;
 
 public class VPActivity extends ActionBarActivity {
+
+    private ViewPager viewPager = null;
+    private List<ListData> list;
+
+    private List<ListData> DataCreate(){
+        List<ListData> res = new ArrayList<ListData>();
+
+        res.add(new ListData("Foo1","hoge1"));
+        res.add(new ListData("Foo2","hoge2"));
+        res.add(new ListData("Foo3","hoge3"));
+
+        return res;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vp);
+        //
+
+        //
     }
 
 

@@ -28,19 +28,7 @@ import d3vel0pper.com.tangochou.commons.ListData;
  */
 public class WordCardListFragment extends Fragment {
 
-    private ViewPager viewPager = null;
     private Activity parent;
-    private List<ListData> list;
-
-    private List<ListData> DataCreate(){
-        List<ListData> res = new ArrayList<ListData>();
-
-        res.add(new ListData("Foo1","hoge1"));
-        res.add(new ListData("Foo2","hoge2"));
-        res.add(new ListData("Foo3","hoge3"));
-
-        return res;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -59,12 +47,6 @@ public class WordCardListFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        /*
-        this.viewPager = (ViewPager)v.findViewById(R.id.viewPager);
-        PagerAdapter pagerAdapter = new CardPagerAdapter(parent,list);
-        this.viewPager.setOnPageChangeListener(new PageChangeListener());
-        this.viewPager.setAdapter(pagerAdapter);
-        */
         return v;
     }
 
