@@ -29,7 +29,7 @@ import d3vel0pper.com.tangochou.commons.ListData;
 public class WordCardListFragment extends Fragment {
 
     private ViewPager viewPager = null;
-    private Activity parent = getActivity();
+    private Activity parent;
     private List<ListData> list;
 
     private List<ListData> DataCreate(){
@@ -54,6 +54,7 @@ public class WordCardListFragment extends Fragment {
         crActBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                parent = getActivity();
                 Intent intent = new Intent(parent, VPActivity.class);
                 startActivity(intent);
             }
