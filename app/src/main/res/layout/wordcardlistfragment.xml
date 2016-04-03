@@ -2,44 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-<<<<<<< HEAD
-
-=======
     <ListView
         android:id="@+id/cardList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         </ListView>
-    <!--
->>>>>>> addCV
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WordCardList"
-        android:textSize="40sp"/>
-<<<<<<< HEAD
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="move"
-        android:id="@+id/CrActivity"/>
-<!--
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager"
-        android:layout_gravity="center">
-    </android.support.v4.view.ViewPager>
-    -->
-<!--
-    <ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager"
-        android:layout_gravity="center">
-        </ViewPager>
-=======
->>>>>>> addCV
-        -->
 </LinearLayout>
