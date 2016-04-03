@@ -1,5 +1,6 @@
 package d3vel0pper.com.tangochou.activity;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import d3vel0pper.com.tangochou.R;
+import d3vel0pper.com.tangochou.addapter.CustomPagerAdapter;
 import d3vel0pper.com.tangochou.commons.ListData;
 
 public class VPActivity extends ActionBarActivity {
@@ -33,8 +35,14 @@ public class VPActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vp);
         //
-
+        setViews();
         //
+    }
+    private void setViews(){
+        FragmentManager manager = getSupportFragmentManager();
+        ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
+        CustomPagerAdapter adapter = new CustomPagerAdapter(manager);
+        viewPager.setAdapter(adapter);
     }
 
 
