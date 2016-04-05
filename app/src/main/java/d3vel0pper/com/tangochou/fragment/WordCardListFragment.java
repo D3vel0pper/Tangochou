@@ -72,7 +72,7 @@ public class WordCardListFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 }).show();
-                //onClick will available if this value is false.
+                //onClick will enable if this value is false.
                 return true;
             }
         });

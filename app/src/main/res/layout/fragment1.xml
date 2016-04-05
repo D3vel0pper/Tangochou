@@ -5,7 +5,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fragment_container">
+        android:id="@+id/fragment_container"
+        android:orientation="horizontal">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,4 +18,22 @@
         android:id="@+id/moveCardListBtn"
         android:text="CardList"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/TestButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AnimationTest1"
+            />
+        <Button
+            android:id="@+id/TestButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AnimationTes21"/>
+
+    </LinearLayout>
+
 </LinearLayout>

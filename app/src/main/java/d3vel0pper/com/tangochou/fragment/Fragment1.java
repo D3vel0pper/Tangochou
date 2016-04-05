@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,16 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
+        //For test
+        else if(v.getId() == R.id.TestButton1){
+
+        } else if(v.getId() == R.id.TestButton2){
+
+        }
+        else {
+            
+        }
+        //End for test
 
     }
 
