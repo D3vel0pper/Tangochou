@@ -75,7 +75,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
 
         }
         else {
-            
+
         }
         //End for test
 
